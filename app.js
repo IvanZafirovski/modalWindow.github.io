@@ -1,15 +1,21 @@
 "use strict";
 
-const btnsShow = document.querySelectorAll(".btns");
-const modalShow = document.querySelector(".hiden");
-const container = document.querySelector(".container");
-const btnsClose = document.querySelector(".close");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnClose = document.querySelector(".close-modal");
+const btnsShow = document.querySelectorAll(".show-modal");
 
 for (let i = 0; i < btnsShow.length; i++)
   btnsShow[i].addEventListener("click", function () {
-    modalShow.classList.remove("hiden");
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
   });
 
-btnsClose.addEventListener("click", function () {
-  modalShow.classList.add("hiden");
+btnClose.addEventListener("click", function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+});
+overlay.addEventListener("click", function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
 });
